@@ -106,8 +106,9 @@ Image with Height and Width Adjusted:
 1. Make an images folder in your personal repository, and import an image of your hometown or pet from that folder. Do it unformatted using the image URL and the relative file path method, then do it again but instead change the height and width of your image:
 
 <!--- Fill you answer here. --->
-
-
+![CornellSeal](https://github.com/YeonjinYun/yy374/blob/master/Images/Cornell_University_seal.svg.png?raw=true)
+![CornellSeal](/Images/Cornell_University_seal.svg.png)
+<img src="/Images/Cornell_University_seal.svg.png" height=200 width=200>
 
 
 
@@ -119,6 +120,7 @@ To insert a link, all you have to do is enclose your linked text in `[]` followe
 1. Below, write a sentence describing your major, and insert a link to your major's department website.
 
 <!--- Fill you answer here. --->
+[Chemical Engineering](https://www.cheme.cornell.edu/)
 
 ## Tables
 Tables in Markdown are slightly harder, but there's an automatic function that allows to you make one easily. When working in a `.md` file, all you have to do is type `table` and hit enter. It will initialize a 2 by 2 table, but you can easily increase the width by going to the last column and hitting `Tab` or it's height by clicking in any cell and hitting `Enter`. Notice in the example how the text below the header is justified left, center, and right. This is due to the line below the header. A line with a colon on the far left of the dashes only indicates left justified, colons on both sides of the dashes indicates centered, and a colon on the far right of the dashes indicates right justified.
@@ -149,7 +151,12 @@ When making tables, it's not important that the lines match up. For example, the
 1. Create a table listing your 3 favorite animals, foods, books, and places on campus. Try out the different cell justifications:
 
 <!--- Fill you answer here. --->
-
+| Animals |  foods   | books | places |
+|:------- |:--------:|:-----:| ------:|
+| Cat     | Wings | Harry Potter | Carpenter Hall |
+| Dog     | Noodle Bowl | The chronicles of Narnia | Olin Library |
+| Turtle  | Steak | Sherlock Holmes | Goldies |
+| Whale | Pasta | Twilight | Sage Hall |
 
 
 ## Code and Syntax Highlighting
@@ -167,11 +174,13 @@ For larger code blocks where you report multiple lines of code, you always start
 
 1. Below, write a Python print function with a different string using syntax highlighting:
 
-<!--- Fill you answer here. --->
+`print('It is so long')`
 
 2. Now write a block of Python code for that same print statement:
 
-<!--- Fill you answer here. --->
+```Python
+But I can do it.
+```
 
 
 
@@ -182,7 +191,7 @@ $$ Re_D = \frac{uD}{\nu} $$
 
 1. Try it on your own! Write your favorite equation using LaTeX source code and toggle the LaTeX preview to see it formatted:
 
-<!--- Fill you answer here. --->
+$$ F=\frac{GMm}{r} $$
 
 
 # Using Python and Running it With Hydrogen in Markdown
