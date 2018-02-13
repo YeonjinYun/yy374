@@ -261,7 +261,6 @@ np.around(SinValue, decimals=3)
 4. Create a `list` of length 5, and verify the length of your list. Once you've done that, turn your `list` into an `array` and apply units of meters to it. After that, create a 5x5 `array`, extract the middle row and middle column. Verify the size of your 2D `array` and apply units of liters to it.
 
 ```Python
-import scipy as scipy
 myList = [0, 1, 2, 3, 4]
 len(myList)
 from aide_design.play import*
@@ -289,16 +288,33 @@ from scipy.constants import Boltzmann as kB_sc
 
 kB = kB_sc * u.joule / u.kelvin
 
-T=input('What is the temperature in degree C?')
-TK= (T+273) * u.kelvin
-R=input('what is the radius of the particle in mm?')
-Rm= (R*0.001) * u.m
-D = (kB*TK)/(6*m.pi*eta*Rm)
+def Diff_coeff(T,r,eta):
+  TK= (T + 273) * u.kelvin
+  Rm= (r * 0.001) * u.m
+  etau= eta * u.kg / (u.m * u.s)
+  D = (kB * TK)/(6 * m.pi * eta * Rm)
+  return D.to_base_units()
+Diff_coeff(25,0.001,0.000089)
 ```
 
 6. You have a pipe with a radius of 0.2 m with water flowing in it at 2 m<sup>3</sup>/s. You want to see how the Reynolds Number changes as viscosity changes due to a change in temperature from 0 to 200<sup>o</sup>C. Create a plot of Reynolds Number against Temperature in Kelvin to show a relationship. Make sure your plot has a title, labeled axes, and axes grid. You can use functions from `physchem` like `pc.re_pipe` and `pc.viscosity_kinematic`. *(Hint: Make an array of temperatures to input into the `pc.viscosity_kinematic` function)*. Make sure to save you plot to your images folder in your personal repository.
 
 <!--- Fill you answer here. --->
+```python
+D = 0.2 * u.m
+flowspeed = 2 * u.m**3 / u.s
+TempArray = u.Quantity(np.arange(273,473),u.kelvin)
+
+Nu = pc.viscosity_kinematic(TempArray)
+Re = pc.re_pipe(flowspeed,D,Nu)
+
+plt.plot(TempArray, Re)
+plt.xlabel('Temperature (Kelvin)')
+plt.ylabel('Reynolds Number')
+plt.title('Reynolds Number at different temperatures')
+plt.savefig('./Images/ReynoldsNum.png')
+plt.show()
+```
 
 # Teletype Basics
 In this section you and your team can practice using Teletype together.
