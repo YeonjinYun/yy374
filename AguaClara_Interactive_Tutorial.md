@@ -107,7 +107,7 @@ Image with Height and Width Adjusted:
 
 <!--- Fill you answer here. --->
 ![CornellSeal](https://github.com/YeonjinYun/yy374/blob/master/Images/Cornell_University_seal.svg.png?raw=true)
-![CornellSeal](/Images/Cornell_University_seal.svg.png)
+![CornellSeal](./Images/Cornell_University_seal.svg.png)
 <img src="/Images/Cornell_University_seal.svg.png" height=200 width=200>
 
 
@@ -321,14 +321,9 @@ In this section you and your team can practice using Teletype together.
 
 1. Create a portal for your team members to join. Have them write you words of  encouragement in the space below, and be sure they sign their name next to their encouragements.
 
-<!--- Fill you answer here. --->
-
-
-
+Hello Yeonjin!! You are my favorite teammate <3 - Cheer Tsang
 
 2. Have you other team members create a portal for you to join. In their Markdown file, write them something encouraging, and sign your name.
-
-<!--- Fill you answer here. --->
 
 
 # GitHub Basics
