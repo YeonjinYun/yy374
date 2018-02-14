@@ -249,13 +249,12 @@ print('x is ', x)
 ```
 
 
-3. Using the NumPy package, calculate the value of sin(4), and use the sigfig function from the utility module in aide_design to get your answer to 3 sig-figs. *(Hint: You will need to import these packages. Remember how to do that?)*
+3. Using the NumPy package and unit_registry, calculate the value of sin(4) meters, and use the sigfig function from the unit unit_registry module in aide_design to get your answer to 2 sig-figs. (Hint: You will need to import these packages. Remember how to do that?)
+
 
 ```Python
-import math as m
-import numpy as np
-SinValue = m.sin(4)
-np.around(SinValue, decimals=3)
+u.default_format = '.2f'
+print(np.sin(4) * u.m)
 ```
 
 4. Create a `list` of length 5, and verify the length of your list. Once you've done that, turn your `list` into an `array` and apply units of meters to it. After that, create a 5x5 `array`, extract the middle row and middle column. Verify the size of your 2D `array` and apply units of liters to it.
@@ -287,14 +286,15 @@ $$ D = \frac{k_BT}{6\pi\eta r} $$
 from scipy.constants import Boltzmann as kB_sc
 
 kB = kB_sc * u.joule / u.kelvin
+kB_new = kB.to_base_units()
 
 def Diff_coeff(T,r,eta):
-  TK= (T + 273) * u.kelvin
-  Rm= (r * 0.001) * u.m
+  TK= T.to(u.kelvin)
+  Rm= r.to(u.m)
   etau= eta * u.kg / (u.m * u.s)
-  D = (kB * TK)/(6 * m.pi * eta * Rm)
+  D = (kB_new * TK)/(6 * np.pi * etau * Rm)
   return D.to_base_units()
-Diff_coeff(25,0.001,0.000089)
+Diff_coeff(25 * u.celsius, 0.001 * u.millimeter ,0.000089)
 ```
 
 6. You have a pipe with a radius of 0.2 m with water flowing in it at 2 m<sup>3</sup>/s. You want to see how the Reynolds Number changes as viscosity changes due to a change in temperature from 0 to 200<sup>o</sup>C. Create a plot of Reynolds Number against Temperature in Kelvin to show a relationship. Make sure your plot has a title, labeled axes, and axes grid. You can use functions from `physchem` like `pc.re_pipe` and `pc.viscosity_kinematic`. *(Hint: Make an array of temperatures to input into the `pc.viscosity_kinematic` function)*. Make sure to save you plot to your images folder in your personal repository.
