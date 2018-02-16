@@ -323,8 +323,11 @@ In this section you and your team can practice using Teletype together.
 
 Hello Yeonjin!! You are my favorite teammate <3 - Cheer Tsang
 
+Yeah math professors are meanies sometimes but that's okay ur just 2 kool 4 him lol cant wait to work with you guys this semester!!! Have a nice fall breakkkkk - Canaan Delgado
+
 2. Have you other team members create a portal for you to join. In their Markdown file, write them something encouraging, and sign your name.
 
+I did it
 
 # GitHub Basics
 Congratulations! You've completed this interactive tutorial. Now all you need to do is save your work and put it on your personal repository. Toggle the Git Tab using `Cntrl + Shift + 9`.
